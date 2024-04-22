@@ -1,0 +1,150 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box
+}
+.select-option {
+  display: flex;
+  align-items: center;
+}
+
+.line-clamp1{
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  height: min-content;
+}
+.line-clamp2{
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.image_hover{
+  z-index: 1;
+  object-fit: cover;
+}
+.image_hover:hover{
+  scale: 1.1;
+  transition: 300ms;
+}
+.textarea_style{
+  width: 100%;
+  height: 150px;
+  padding: 8px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  background-color: #f8f8f8;
+  font-size: 16px;
+  resize: none;
+  outline: none;
+}
+
+.nav_hover:hover::before{
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 2.5px;
+  bottom: 0;
+  left: 0;
+  background-color: #DA092F;
+  z-index: 1;
+  animation: bottomline 0.5s ease-in-out forwards;
+}
+.nav_active::before{
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 2.5px;
+  bottom: 0;
+  left: 0;
+  background-color: white;
+  z-index: 1;
+}
+
+@keyframes bottomline {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+
+
+/* Cookie Consent Style */
+.cookie{
+  transform: translateY(0rem);
+  transition: 500ms;
+  opacity: 1;
+}
+.accept{
+  transform: translateY(100rem);
+  opacity: 0;
+  transition: 500ms;
+}
+
+
+
+.grid_tp{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  height: 100%;
+  grid-gap: 16px;
+
+}
+
+@media screen and (min-width: 768px) {
+  .grid_tp{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    height: 100%;
+    grid-gap: 16px;
+  }
+}
+
+/* Dot Carousel */
+.dot{
+ background-color: white;
+ width: 10px;
+ height: 10px;
+ border-radius: 100%;
+ transition: 300ms;
+ cursor: pointer;
+}
+.active{
+  background-color: #02685C;
+  width: 20px;
+  border-radius: 10px;
+  transition: 300ms;
+}
+
+
+
+
+
+/* button animation */
+.btn-animetion{
+  position: relative;
+  overflow: hidden;
+}
+.btn-animetion:after{
+  content: '';
+  width: 10rem;
+  height: 10rem;
+  background-color: #02685C;
+  position: absolute;
+  top: 0;
+  left: 0;
+  clip-path: polygon(0 0, 100% 0%, 85% 100%, 0% 100%);
+  transform: translateX(-100%);
+  transition: 1000ms;
+}
+.btn-animetion:hover:after{
+  transform: translateX(0);
+}
